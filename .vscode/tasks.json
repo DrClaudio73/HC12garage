@@ -5,16 +5,30 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "gcc-7 build active file",
-            "command": "/usr/bin/gcc-7",
+            "label": "build",
+            "command": "idf.py",
             "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "build",
             ],
             "options": {
-                "cwd": "/usr/bin"
+                "cwd": "/home/ccattaneo/projects/masterStation/HC12garage"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "flash",
+            "command": "idf.py",
+            "args": [
+                "-p",
+                "/dev/ttyUSB0",
+                "flash",
+            ],
+            "options": {
+                "cwd": "/home/ccattaneo/projects/masterStation/HC12garage"
             },
             "problemMatcher": [
                 "$gcc"
