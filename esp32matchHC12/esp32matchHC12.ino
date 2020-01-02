@@ -7,7 +7,7 @@ byte ledStatus = 0;
 const byte ledPin = 13;
 const byte garageControlPin = 6;
 const byte bigGateControlPin = 5;
-const byte pressDuration = 1500;
+const int pressDuration = 1500;
 //================= PART FOR CONTOLLING GARAGE==========================
 //================= PART FOR HC12==========================
 const byte HC12RxdPin = 9; // Receive Pin on HC12
@@ -31,9 +31,9 @@ SoftwareSerial HC12(HC12TxdPin, HC12RxdPin);
 void presentationBlink(void) {
   for (byte i = 0; i < 5; i++) {
     digitalWrite(ledPin, 1);
-    delay(500);
+    delay(50);
     digitalWrite(ledPin, 0);
-    delay(500);
+    delay(50);
   }
 }
 
